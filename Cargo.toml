@@ -1,0 +1,24 @@
+[package]
+name = "popenproject"
+description = "Integration of Cosmic Shell with OpenProject Ticketing and integrated Time Tracking"
+version = "0.1.0"
+edition = "2021"
+repository = "https://github.com/nkia-christoph/popenproject"
+license = "GPL-3.0-only"
+authors = ["Christoph Kröppl <ch.kroeppl@gmx.at>"]
+readme = "README.md"
+publish = false
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1", features = ["rt"] }
+
+[dev-dependencies]
+clippy = "*"
+
+[profile.release]
+codegen-units = 1
+lto = true
+panic = "abort"
+strip = true
